@@ -47,6 +47,10 @@ ul li {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
+    cursor: pointer;
+}
+ul li:hover {
+    text-decoration: underline;
 }
 
 .links {
