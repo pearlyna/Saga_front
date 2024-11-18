@@ -8,13 +8,10 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "standalone": false
+          "skipTests": true
         },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -36,7 +33,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -100,7 +98,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -110,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "70085e95-003b-4670-9f1e-48bdef8a3524"
   }
 }

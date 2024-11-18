@@ -1,0 +1,42 @@
+<section class="sobre-page">
+    <div class="sobre_box">
+        <h1>Sobre Nós</h1>
+        <span class="quem_somos">
+            <h3>Quem Somos?</h3>
+            <p>
+                Bem-vindo ao nosso mundo de contos, onde histórias clássicas ganham vida<br>
+                e novas narrativas nascem a cada dia! Aqui, você pode revisitar contos<br>
+                atemporais que encantaram gerações. <br>
+                <br><br>
+                Nosso objetivo é preservar essas histórias que fazem parte do imaginário<br>
+                popular e, ao mesmo tempo, abrir espaço para que novas aventuras possam<br>
+                surgir.
+            </p>
+        </span>
+
+        <span class="porque">
+            <h3>Por que contos clássicos?</h3>
+            <p>
+                Acreditamos que os contos de fadas e fábulas clássicas carregam valores<br>
+                universais e lições preciosas, que divertem, educam e inspiram a todos.
+                <br><br>
+                Ao mesmo tempo, sabemos que cada pessoa tem uma história única para<br>
+                contar, e queremos oferecer um espaço onde essas novas histórias possam<br>
+                florescer ao lado dos clássicos.
+                <br><br>
+                Para as crianças, é uma forma de aprender brincando; para os adultos, é<br>
+                uma chance de revisitar a infância e até mesmo criar novas memórias<br>
+                literárias.
+            </p>
+        </span>
+    </div>
+    <div class="slideshow-container">
+        <button class="arrow left" (click)="prevSlide()">&#11164;</button>
+        <div class="img_container">
+            <img *ngFor="let img of images; let i = index" [src]="img" [alt]="'Image ' + (i + 1)"
+                [class.active]="i === currentSlide" />
+        </div>
+        <button class="arrow right" (click)="nextSlide()">&#11166;</button>
+    </div>
+
+</section>
