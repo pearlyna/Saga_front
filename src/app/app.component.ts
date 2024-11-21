@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'] // Fix here
+  styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
   title = 'Saga';
 
-   showHeaderFooter = true;
+  mostrarHeaderFooter = true;
 
   constructor(private router: Router) {}
 
@@ -19,7 +18,7 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Specify the routes where the header/footer should NOT appear
-        this.showHeaderFooter = !['/sobre', '/cadastro', '/adicionar'].includes(event.url);
+        this.mostrarHeaderFooter = !['/sobre', '/cadastro', '/adicionar', '/ler-historia'].includes(event.url);
       }
     });
   }

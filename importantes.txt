@@ -1,0 +1,16 @@
+npm install
+
+npm install @angular-devkit/build-angular --save-dev
+
+npx ng g c components/header
+
+
+{
+        "titulo": "Cahinhos Dourados",
+        "imagem": "",
+        "historia_intro": "Era uma vez uma menina chamada Cachinhos Dourados, conhecida por seus cabelos dourados e cacheados que brilhavam como ouro. Um dia, enquanto explorava a floresta,",
+        "historia_meio": " Depois, na cozinha, viu três tigelas de mingau sobre a mesa. Provou a tigela maior, ",
+        "historia_fim": "Quando Cachinhos Dourados acordou e viu os ursos, ficou assustada. Porém, eles foram gentis,.",
+        "autor": "Robert Southey ",
+        "publicacao": "publicado em 1837"
+    }

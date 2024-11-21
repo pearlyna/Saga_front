@@ -1,0 +1,165 @@
+.footer_container {
+    margin-top: 300px;
+    background: linear-gradient(to top, #000000, #212121);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: left;
+    justify-content: left;
+    height: fit-content;
+    color: #E7A13C;
+    padding: 60px 0;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    gap: 400px;
+    width: fit-content;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 60px;
+}
+
+.footer h3 {
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.copyright h3 {
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.copyright {
+    width: 60%;
+    text-align: left;
+    padding-right: 400px;
+}
+
+ul li {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    cursor: pointer;
+}
+ul li:hover {
+    text-decoration: underline;
+}
+
+.links {
+    text-align: left;
+    margin-right: 300px;
+}
+
+.icons {
+    margin-inline: 10px;
+
+    .insta {
+        background-color: #253E0B;
+    }
+
+    .twit {
+        background-color: #253E0B;
+    }
+
+    .face {
+        background-color: #253E0B;
+    }
+}
+
+
+.icons img {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin-right: 20px;
+    border-radius: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icons img:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .links {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .copyright {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer h3 {
+        font-size: 40px;
+    }
+
+    .copyright h3 {
+        font-size: 30px;
+    }
+
+    ul li {
+        font-size: 18px;
+    }
+
+    .icons img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer h3 {
+        font-size: 30px;
+    }
+
+    .copyright h3 {
+        font-size: 24px;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+
+    .icons img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .footer_container {
+        padding: 30px 0;
+    }
+
+    .links {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+}

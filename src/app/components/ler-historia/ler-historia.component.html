@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="conteudo" *ngIf="historiaLer">
+      <mat-card class="card mat-elevation-z3">
+        <mat-card-header>
+          <div class="imagem">
+            <img *ngIf="historiaLer.imagem" [src]="historiaLer.imagem" alt="Imagem da história" class="historia-image">
+          </div>
+          <mat-card-subtitle class="titulo">{{ historiaLer.autor }}</mat-card-subtitle>
+          <mat-card-subtitle class="titulo">{{ historiaLer.publicacao }}</mat-card-subtitle>
+          <mat-card-title class="titulo">{{ historiaLer.titulo }}</mat-card-title>
+          <mat-card-subtitle class="titulo">{{ historiaLer.historia_intro }}</mat-card-subtitle>
+          <mat-card-subtitle class="titulo">{{ historiaLer.historia_meio }}</mat-card-subtitle>
+          <mat-card-subtitle class="titulo">{{ historiaLer.historia_fim }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+  

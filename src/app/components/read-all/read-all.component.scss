@@ -1,0 +1,66 @@
+h1 {
+    color: #E7A13C;
+    font-family: "Marck Script", cursive;
+    font-size: 40px;
+    font-weight: lighter;
+    font-style: normal;
+    text-align: center;
+    margin-top: 180px;
+}
+.container {
+    width: fit-content;
+    background-color: #1B1B1B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    padding: 70px 20px;
+    border-radius: 50px;
+    flex-direction: column;
+}
+
+.conteudo {
+    width: 100%;
+}
+
+mat-card {
+    width: 370px;
+    background-color: transparent;
+
+    .acoes {
+        text-align: center;
+
+        button {
+            color: #744909;
+            background-color: white;
+        }
+
+        .botao_editar {
+            border-radius: 50px 0 0 50px;
+            border-right: 1px solid rgb(75, 75, 75);
+        }
+
+        .botao_deletar {
+            border-radius: 0 50px 50px 0;
+        }
+    }
+
+    mat-card-header {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+
+        .imagem img {
+            border-left: solid 17px #715835;
+            width: 100%;
+            border-radius: 0 50px 0 0;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .titulo {
+            color: #E7A13C;
+        }
+    }
+}

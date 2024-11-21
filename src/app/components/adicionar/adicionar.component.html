@@ -1,0 +1,62 @@
+<section class="add_container">
+    <div class="add-box">
+      <h1>Adicionar história</h1>
+      <mat-card class="card mat-elevation-z3">
+        <form class="form-layout">
+          <!-- Row 1: Imagem and Título -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Imagem</mat-label>
+              <input type="file" class="file-input" (change)="onFileSelected($event)" />
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Título</mat-label>
+              <input matInput placeholder="Digite o título" />
+            </mat-form-field>
+          </div>
+  
+          <!-- Row 2: Autor and Publicação -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Autor</mat-label>
+              <input matInput placeholder="Digite o autor" />
+            </mat-form-field>
+  
+            <mat-form-field appearance="fill" class="form-field">
+              <mat-label>Publicação</mat-label>
+              <input matInput placeholder="Digite a publicação" />
+            </mat-form-field>
+          </div>
+  
+          <!-- Row 3: Introdução da história -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="form-field full-width">
+              <mat-label>Introdução da história</mat-label>
+              <textarea matInput rows="3" placeholder="Digite a introdução"></textarea>
+            </mat-form-field>
+          </div>
+  
+          <!-- Row 4: Meio da história -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="form-field full-width">
+              <mat-label>Meio da história</mat-label>
+              <textarea matInput rows="3" placeholder="Digite o meio"></textarea>
+            </mat-form-field>
+          </div>
+  
+          <!-- Row 5: Final da história -->
+          <div class="form-row">
+            <mat-form-field appearance="fill" class="form-field full-width">
+              <mat-label>Final da história</mat-label>
+              <textarea matInput rows="3" placeholder="Digite o final"></textarea>
+            </mat-form-field>
+          </div>
+  
+          <!-- Submit Button -->
+          <button mat-raised-button color="primary" class="button_add">Adicionar</button>
+        </form>
+      </mat-card>
+    </div>
+  </section>
+  
