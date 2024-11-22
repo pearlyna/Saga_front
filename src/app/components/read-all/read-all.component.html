@@ -5,8 +5,8 @@
     <mat-card class="card mat-elevation-z3">
       <mat-card-header>
         <div class="imagem">
-          <!-- Exibir a imagem com routerLink -->
-          <a routerLink="/ler-historia" [queryParams]="{ id: item.id }">
+          <!-- Alterado para usar state ao invés de queryParams -->
+          <a (click)="lerHistoria(item)">
             <img *ngIf="item.imagem" [src]="item.imagem" alt="Imagem da história" class="historia-image">
           </a>
         </div>
@@ -15,12 +15,12 @@
 
       <div class="acoes">
         <!-- Botão de editar -->
-        <button mat-mini-fab class="botao_editar">
+        <button (click)="editarHistoria(item)" class="botao_editar" mat-mini-fab>
           <mat-icon>edit</mat-icon>
         </button>
 
         <!-- Botão de deletar -->
-        <button (click)="apagar(item.titulo || '')" class="botao_deletar" mat-mini-fab id="apagar">
+        <button (click)="apagar(item.id)" class="botao_deletar" mat-mini-fab id="apagar">
           <mat-icon>delete</mat-icon>
         </button>
       </div>

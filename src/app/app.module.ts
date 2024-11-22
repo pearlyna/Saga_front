@@ -13,12 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { AdicionarComponent } from './components/adicionar/adicionar.component';
+import { EditarComponent } from './components/editar/editar.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 import { MatIconModule } from '@angular/material/icon';  
 import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';  // Updated import
 import { LerHistoriaComponent } from './components/ler-historia/ler-historia.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { LerHistoriaComponent } from './components/ler-historia/ler-historia.com
     SobreComponent, 
     CadastroComponent,
     AdicionarComponent,
+    EditarComponent,
     LerHistoriaComponent,
+    HttpClientModule,
 
   ],
   providers: [

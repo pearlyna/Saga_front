@@ -18,7 +18,7 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Specify the routes where the header/footer should NOT appear
-        this.mostrarHeaderFooter = !['/sobre', '/cadastro', '/adicionar', '/ler-historia'].includes(event.url);
+        this.mostrarHeaderFooter = !['/sobre', '/cadastro', '/adicionar', '/editar', '/ler-historia'].includes(event.url);
       }
     });
   }

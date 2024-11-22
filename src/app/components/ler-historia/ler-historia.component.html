@@ -1,18 +1,26 @@
 <div class="container">
-    <div class="conteudo" *ngIf="historiaLer">
-      <mat-card class="card mat-elevation-z3">
-        <mat-card-header>
-          <div class="imagem">
-            <img *ngIf="historiaLer.imagem" [src]="historiaLer.imagem" alt="Imagem da história" class="historia-image">
-          </div>
-          <mat-card-subtitle class="titulo">{{ historiaLer.autor }}</mat-card-subtitle>
-          <mat-card-subtitle class="titulo">{{ historiaLer.publicacao }}</mat-card-subtitle>
-          <mat-card-title class="titulo">{{ historiaLer.titulo }}</mat-card-title>
-          <mat-card-subtitle class="titulo">{{ historiaLer.historia_intro }}</mat-card-subtitle>
-          <mat-card-subtitle class="titulo">{{ historiaLer.historia_meio }}</mat-card-subtitle>
-          <mat-card-subtitle class="titulo">{{ historiaLer.historia_fim }}</mat-card-subtitle>
-        </mat-card-header>
-      </mat-card>
-    </div>
+  <div class="conteudo" *ngIf="historiaLer">
+    <mat-card class="card mat-elevation-z3">
+      <mat-card-header>
+        <div class="imagem">
+          <img
+            *ngIf="historiaLer.imagem"
+            [src]="historiaLer.imagem"
+            alt="Imagem da história"
+            class="historia-image"
+          />
+          <div class="titulo">{{ historiaLer.titulo }}</div>
+          <div class="subtitulo">Autor: {{ historiaLer.autor }}</div>
+          <div class="subtitulo_publi">Publicado em: {{ historiaLer.publicacao }}</div>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="content">
+          <p><strong>Introdução:</strong> {{ historiaLer.historia_intro }}</p>
+          <p><strong>Meio:</strong> {{ historiaLer.historia_meio }}</p>
+          <p><strong>Fim:</strong> {{ historiaLer.historia_fim }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
-  
+</div>

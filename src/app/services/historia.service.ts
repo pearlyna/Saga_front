@@ -22,7 +22,7 @@ export class HistoriaService {
   findById(id: number): Observable<historia> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<historia>(url);
-  }
+  }  
 
   // Método para exibir mensagens de feedback
   message(msg: string): void {
@@ -50,4 +50,5 @@ export class HistoriaService {
     const url = `${this.baseUrl}/${id}/imagem`;
     return this.http.post<void>(url, imagem);
   }
+  
 }
