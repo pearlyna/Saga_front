@@ -1,61 +1,42 @@
 <section class="edit-container">
-    <div class="edit-box">
-      <h1>Editar História</h1>
-      <mat-card class="card mat-elevation-z3">
-        <div class="imagem-anterior">
-            <img [src]="historia.imagem ? historia.imagem : 'assets/placeholder.png'" alt="Imagem Anterior" />
-        </div>
-        <form class="form-layout" (ngSubmit)="salvarHistoria()">
+  <div class="edit-box">
+    <h1>Editar História</h1>
+    <mat-card class="card mat-elevation-z3">
+      <div class="imagem-anterior">
+        <img *ngIf="imagemUrl" [src]="imagemUrl" alt="Imagem da história" class="historia-image" />
+      </div>
+      <form class="form-layout" (ngSubmit)="salvar()">
 
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Imagem</mat-label>
-              <input type="file" (change)="onFileSelected($event)" />
-            </mat-form-field>
+        <div class="form-row">
+          <input class="border-left" type="file" (change)="onImageSelected($event)" />
 
-            <mat-form-field appearance="fill" class="form-field">
-                <mat-label>Título</mat-label>
-                <input matInput [(ngModel)]="historia.titulo" name="titulo" placeholder="Digite o título" required />
-              </mat-form-field>
+          <input class="border-right" type="text" [(ngModel)]="historia.titulo" name="titulo"
+            placeholder="Digite o título" required />
         </div>
 
-  
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Autor</mat-label>
-              <input matInput [(ngModel)]="historia.autor" name="autor" placeholder="Digite o autor" required />
-            </mat-form-field>
-  
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Publicação</mat-label>
-              <input matInput [(ngModel)]="historia.publicacao" name="publicacao" placeholder="Digite a publicação" />
-            </mat-form-field>
-          </div>
-  
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field full-width">
-              <mat-label>Introdução da história</mat-label>
-              <textarea matInput [(ngModel)]="historia.historia_intro" name="historia_intro" rows="3" placeholder="Digite a introdução"></textarea>
-            </mat-form-field>
-          </div>
-  
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field full-width">
-              <mat-label>Meio da história</mat-label>
-              <textarea matInput [(ngModel)]="historia.historia_meio" name="historia_meio" rows="3" placeholder="Digite o meio"></textarea>
-            </mat-form-field>
-          </div>
-  
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field full-width">
-              <mat-label>Final da história</mat-label>
-              <textarea matInput [(ngModel)]="historia.historia_fim" name="historia_fim" rows="3" placeholder="Digite o final"></textarea>
-            </mat-form-field>
-          </div>
-  
-          <button mat-raised-button class="button_edit" type="submit">Atualizar</button>
-        </form>
-      </mat-card>
-    </div>
-  </section>
-  
+        <div class="form-row">
+          <input type="text" [(ngModel)]="historia.autor" name="autor" placeholder="Digite o autor" required />
+          <input type="text" [(ngModel)]="historia.publicacao" name="publicacao" placeholder="Digite a publicação"
+            required />
+        </div>
+
+        <div class="form-row">
+          <textarea [(ngModel)]="historia.historia_intro" name="historia_intro" rows="3"
+            placeholder="Digite a introdução" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <textarea class="historia_meio" [(ngModel)]="historia.historia_meio" name="historia_meio" rows="5"
+            placeholder="Digite o meio" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <textarea class="border" [(ngModel)]="historia.historia_fim" name="historia_fim" rows="3"
+            placeholder="Digite o final" required></textarea>
+        </div>
+
+        <button mat-raised-button class="button_edit" type="submit">Atualizar História</button>
+      </form>
+    </mat-card>
+  </div>
+</section>

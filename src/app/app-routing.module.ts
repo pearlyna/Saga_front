@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { LoginComponent } from './components/login/login.component';
 import { AdicionarComponent } from './components/adicionar/adicionar.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { LerHistoriaComponent } from './components/ler-historia/ler-historia.component';
@@ -10,23 +11,27 @@ import { LerHistoriaComponent } from './components/ler-historia/ler-historia.com
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent, 
+    component: HomeComponent,
   },
   {
     path: 'sobre',
-    component: SobreComponent, 
+    component: SobreComponent,
   },
   {
     path: 'cadastro',
-    component: CadastroComponent, 
+    component: CadastroComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'adicionar',
-    component: AdicionarComponent, 
+    component: AdicionarComponent,
   },
   {
-    path: 'editar',
-    component: EditarComponent, 
+    path: 'editar/:id',
+    component: EditarComponent,
   },
   {
     path: 'ler-historia',
@@ -38,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

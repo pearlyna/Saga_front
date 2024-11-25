@@ -1,13 +1,13 @@
-import { Component} from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-sobre',
-  standalone: true, 
+  standalone: true,
   templateUrl: './sobre.component.html',
   styleUrls: ['./sobre.component.scss'],
-  imports: [CommonModule], 
+  imports: [CommonModule],
 })
 export class SobreComponent {
   images: string[] = [

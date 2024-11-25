@@ -1,67 +1,83 @@
 h1 {
-    color: #E7A13C;
-    font-family: "Marck Script", cursive;
-    font-size: 40px;
-    font-weight: lighter;
-    font-style: normal;
-    text-align: center;
-    margin-top: 180px;
+  color: #E7A13C;
+  font-family: "Marck Script", cursive;
+  font-size: 40px;
+  font-weight: lighter;
+  font-style: normal;
+  text-align: center;
+  margin: 180px 0 0 0;
+  border-bottom: 1px solid #90785485;
+  width: 70%;
+  justify-self: center;
 }
+
 .container {
-    width: fit-content;
-    background-color: #1B1B1B;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-    padding: 70px 20px;
-    border-radius: 50px;
-    flex-direction: row;
-    gap: 50px;
+  justify-self: center;
+  width: 80%;
+  background-color: #1B1B1B;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 70px 20px;
+  border-radius: 0;
 }
 
 .conteudo {
-    width: 100%;
+  flex: 1 1 calc(100% / 2 - 20px);
+  max-width: 370px;
+  display: flex;
+  justify-content: center;
 }
 
 mat-card {
-    width: 370px;
-    background-color: transparent;
+  width: 100%;
+  background-color: transparent;
 
-    .acoes {
-        text-align: center;
+  .acoes {
+    text-align: center;
 
-        button {
-            color: #744909;
-            background-color: white;
-        }
-
-        .botao_editar {
-            border-radius: 50px 0 0 50px;
-            border-right: 1px solid rgb(75, 75, 75);
-        }
-
-        .botao_deletar {
-            border-radius: 0 50px 50px 0;
-        }
+    button {
+      color: #744909;
+      background-color: white;
+      width: 30%;
     }
 
-    mat-card-header {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-
-        .imagem img {
-            border-left: solid 17px #715835;
-            width: 100%;
-            border-radius: 0 50px 0 0;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .titulo {
-            color: #E7A13C;
-        }
+    .botao_editar {
+      border-radius: 50px 0 0 50px;
+      border-right: 1px solid rgb(75, 75, 75);
     }
+
+    .botao_deletar {
+      border-radius: 0 50px 50px 0;
+    }
+  }
+
+  mat-card-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    .imagem img {
+      border-left: solid 13px #715835;
+      width: 90%;
+      border-radius: 0 50px 0 0;
+      height: 400px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .imagem img:hover {
+      box-shadow: 5px 7px 6px rgba(0, 0, 0, 0.742);
+    }
+
+    .titulo {
+      font-family: "Inter", serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #E7A13C;
+      margin: 10px 0 10px 0;
+    }
+  }
 }

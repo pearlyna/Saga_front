@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { historia } from '../../entities/historia';
 import { HistoriaService } from '../../services/historia.service';
 import { Router } from '@angular/router';
@@ -9,25 +9,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./read-all.component.scss']
 })
 export class ReadAllComponent implements OnInit {
-  list: historia[] = [];  // Lista para armazenar as histórias
-  selectedHistoria: historia | null = null;  // Armazenar história selecionada
-  baseUrl: string = 'http://localhost:8081/historia/imagem/';  // URL base para acessar a imagem
+  list: historia[] = [];
+  selectedHistoria: historia | null = null;
+  baseUrl: string = 'http://localhost:8081/historia/imagem/';
+  itensPorLinha: number = 3;
 
   constructor(private service: HistoriaService, private router: Router) { }
 
   ngOnInit(): void {
-    // Buscar todas as histórias ao iniciar o componente
     this.findAll();
   }
 
-  // Método para buscar todas as histórias
   findAll(): void {
     this.service.findAll().subscribe({
       next: (data) => {
-        // Atualiza as URLs das imagens para a lista
+        // atualiza as urls das imagens para a lista
         this.list = data.map((historia) => ({
           ...historia,
-          imagem: `${this.baseUrl}${historia.imagem}`  // Prepend the base URL to the image filename
+          imagem: `${this.baseUrl}${historia.imagem}`
         }));
         console.log('Histórias carregadas:', data);
       },
@@ -37,27 +36,46 @@ export class ReadAllComponent implements OnInit {
       }
     });
   }
-// Método para ler uma história e navegar para a tela de leitura
-lerHistoria(item: historia): void {
-  this.router.navigate(['/ler-historia'], { state: { historia: item } });
-}
 
-  // Método para apagar uma história
+  lerHistoria(historia: historia): void {
+    this.router.navigate(['/ler-historia'], { state: { historiaId: historia.id } });
+  }
+
+
+
   apagar(id: any): void {
     this.service.apagar(id).subscribe({
       next: () => {
         this.service.message('História excluída com sucesso.');
-        this.list = this.list.filter(historia => historia.id !== id);  // Remove pela chave id
+        this.list = this.list.filter(historia => historia.id !== id);
       },
       error: () => {
         this.service.message('Não foi possível excluir a história.');
       }
     });
   }
-  
-  // Método para editar uma história e navegar para a tela de edição
-  editarHistoria(item: historia): void {
-    // Passa a história selecionada usando a navegação com "state"
-    this.router.navigate(['/editar'], { state: { historia: item } });
+
+  editarHistoria(item: any) {
+    this.router.navigate([`/editar/${item.id}`]);
+  }
+
+  // funcao para calcular a quantidade de itens que cabem na tela dependendo da largura da tela
+  adjustItemsPerRow(): void {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1200) {
+      this.itensPorLinha = 3;
+    } else if (screenWidth >= 800) {
+      this.itensPorLinha = 3;
+    } else if (screenWidth >= 400) {
+      this.itensPorLinha = 2;
+    } else {
+      this.itensPorLinha = 1;
+    }
+  }
+
+  // ouvir a mudanca de tamanho da tela para ajustar o layout
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.adjustItemsPerRow();  // recalcula o numero de itens por linha quando a tela for redimensionada
   }
 }

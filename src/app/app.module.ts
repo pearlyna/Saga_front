@@ -15,8 +15,9 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { AdicionarComponent } from './components/adicionar/adicionar.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { LoginComponent } from './components/login/login.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
-import { MatIconModule } from '@angular/material/icon';  
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';  // Updated import
 import { LerHistoriaComponent } from './components/ler-historia/ler-historia.component';
@@ -40,8 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    SobreComponent, 
+    SobreComponent,
     CadastroComponent,
+    LoginComponent,
     AdicionarComponent,
     EditarComponent,
     LerHistoriaComponent,
@@ -49,10 +51,10 @@ import { HttpClientModule } from '@angular/common/http';
 
   ],
   providers: [
-    provideHttpClient(withInterceptorsFromDi()), // New way to provide HttpClient
+    provideHttpClient(withInterceptorsFromDi()),
     provideClientHydration(),
     provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

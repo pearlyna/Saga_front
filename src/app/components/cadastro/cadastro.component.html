@@ -1,6 +1,27 @@
 <section class="cadastro_container">
     <div class="cadstro-box">
-    <h1>Cadastre-se</h1>
-    <button class="button_cadastro">Cadastrar</button>
-</div>
+        <h1>Cadastre-se</h1>
+        <mat-card class="card mat-elevation-z3">
+            <form class="form-layout" (ngSubmit)="onSubmit()">
+
+                <div class="form-row">
+                    <input matInput name="nome" placeholder="Digite seu nome" [(ngModel)]="cadastro.nome" required />
+                    <input matInput name="cpf" placeholder="Digite seu CPF" [(ngModel)]="cadastro.cpf" required />
+                </div>
+
+                <div class="form-row">
+                    <input matInput name="senha" type="password" placeholder="Digite sua senha"
+                        [(ngModel)]="cadastro.senha" required />
+                    <input matInput name="email" placeholder="Digite seu email" [(ngModel)]="cadastro.email" required
+                        email />
+                </div>
+
+                <button mat-raised-button class="button_cadastro" type="submit">Cadastrar</button>
+
+                <div class="login_link">
+                    <p>Já tem conta? <a (click)="irParaTelaLogin()">Clique aqui</a> para fazer login</p>
+                </div>
+            </form>
+        </mat-card>
+    </div>
 </section>

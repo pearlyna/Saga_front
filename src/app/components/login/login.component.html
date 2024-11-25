@@ -1,0 +1,24 @@
+<section class="login_container">
+  <div class="login-box">
+    <h1>Login</h1>
+    <mat-card class="card mat-elevation-z3">
+      <form class="form-layout" (ngSubmit)="onSubmit()">
+        <div *ngIf="mensagemErro" class="erro-mensagem">
+          <p>{{ mensagemErro }}</p>
+        </div>
+
+        <div class="form-row">
+          <input matInput name="cpf" [(ngModel)]="cpf" placeholder="Digite seu CPF" required />
+
+          <input matInput name="senha" [(ngModel)]="senha" type="password" placeholder="Digite sua senha" required />
+        </div>
+
+        <button mat-raised-button class="button_login" type="submit">Entrar</button>
+
+        <div class="cadastro_link">
+          <p>Não tem conta? <a (click)="irParaTelaCadastro()">Clique aqui</a> para fazer cadastro</p>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</section>

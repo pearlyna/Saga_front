@@ -4,59 +4,94 @@
   align-items: center;
   width: 100%;
   height: fit-content;
+  background-color: #212121;
+
   .conteudo {
     width: 100%;
     text-align: center;
 
     .card {
-      position: relative; /* Make the card a relative container */
+      position: relative;
       color: #fff;
       overflow: hidden;
       padding: 0;
       background-color: transparent;
 
       .imagem {
-        position: relative; /* Set the image container to relative */
+        position: relative;
+        background-color: red;
+        width: 100%;
+        height: auto;
+
         .historia-image {
           width: 100%;
+          height: 100vh;
+          justify-self: center;
           display: block;
+          object-fit: cover;
         }
 
-        .titulo,
-        .subtitulo, .subtitulo_publi {
-          position: absolute; /* Position text over the image */
-          left: 100px; /* Align the text to the left */
+        .subtitulo,
+        .subtitulo_publi {
+          position: absolute;
+          left: 100px;
           margin: 0;
-          z-index: 10; /* Ensure the text appears above the image */
-          color: white;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
-        }
-
-        .titulo {
-          bottom: 90px; /* Position the title above the subtitle */
-          font-size: 28px;
-          font-weight: bold;
+          z-index: 10;
+          color: #744909;
+          font-family: "Metal Mania", system-ui;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 30px;
+          background-color: #e9dbc485;
+          padding: 8px;
         }
 
         .subtitulo {
-          bottom: 50px; /* Position the subtitle at the bottom */
-          font-size: 18px;
+          bottom: 150px;
         }
+
         .subtitulo_publi {
-            bottom: 20px; /* Position the subtitle at the bottom */
-            font-size: 18px;
+          bottom: 110px;
         }
       }
 
+      .titulo {
+        font-size: 100px;
+        background-color: #253E0B;
+        text-align: left;
+        width: fit-content;
+        padding: 30px 40px 30px 250px;
+        font-family: "Island Moments", cursive;
+        font-weight: 400;
+        font-style: normal;
+        border-radius: 0 100px 0 0;
+        color: #E7A13C;
+        margin-bottom: 10px;
+      }
+
       mat-card-content .content {
-        margin-top: 100px;
+        width: 70%;
+        justify-self: center;
         padding: 10px;
         font-size: 16px;
         line-height: 1.5;
         text-align: center;
+        background-image: linear-gradient(#2121218d, #2121218d),
+          url('../../../assets/imgs/papel.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         p {
-          margin: 10px 0;
+          margin: 40px 0;
+          text-align: left;
+          width: 90%;
+          justify-self: center;
+          font-family: "Meera Inimai", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 25px;
+          color: #3F2A09;
         }
 
         strong {

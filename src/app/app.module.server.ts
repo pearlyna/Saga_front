@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-import { AppModule } from './app.module'; // Import the AppModule
+import { AppModule } from './app.module'; 
 import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
-    AppModule, // Correctly import AppModule
-    ServerModule, // Ensure ServerModule is imported
+    AppModule, 
+    ServerModule, 
   ],
   bootstrap: [AppComponent],
 })

@@ -49,6 +49,7 @@ ul li {
     font-size: 20px;
     cursor: pointer;
 }
+
 ul li:hover {
     text-decoration: underline;
 }
@@ -61,16 +62,16 @@ ul li:hover {
 .icons {
     margin-inline: 10px;
 
-    .insta {
-        background-color: #253E0B;
-    }
-
-    .twit {
-        background-color: #253E0B;
-    }
-
+    .insta,
+    .twit,
     .face {
         background-color: #253E0B;
+    }
+
+    .insta:hover,
+    .twit:hover,
+    .face:hover {
+        background-color: #3c6213;
     }
 }
 

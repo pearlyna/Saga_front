@@ -1,80 +1,86 @@
-import { FormsModule } from '@angular/forms'; // Adicione essa linha
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HistoriaService } from '../../services/historia.service';
 import { historia } from '../../entities/historia';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-editar',
   standalone: true,
-  imports: [CommonModule, 
-    FormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,],
+  imports: [CommonModule, FormsModule, MatCardModule,],
   templateUrl: './editar.component.html',
-  styleUrl: './editar.component.scss'
+  styleUrls: ['./editar.component.scss']
 })
 export class EditarComponent implements OnInit {
-  historia: historia = {
-    id: 0,
-    titulo: '',
-    imagem: '',
-    autor: '',
-    historia_intro: '',
-    historia_meio: '',
-    historia_fim: '',
-    publicacao: ''
-  };
-  novaImagem: File | null = null;
+  historia: historia = {};  // historia que esta sendo editada
+  imagemUrl: string | undefined; // url da imagem atual
+  novaImagem: File | null = null; // para armazenar nova imagem se tiver
 
-  constructor(private service: HistoriaService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private historiaService: HistoriaService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    const historiaState = history.state.historia;
-    if (historiaState) {
-      this.historia = historiaState;
-    } else {
-      this.router.navigate(['/']);
+    const historiaIdString = this.route.snapshot.paramMap.get('id');
+
+    if (historiaIdString) {
+      const historiaId = +historiaIdString; // converter para numero
+      this.historiaService.findById(historiaId).subscribe({
+        next: (data) => {
+          this.historia = data;
+          if (data.imagem) {
+            this.imagemUrl = `${this.historiaService.baseUrl}/imagem/${data.imagem}`; // url da imagem atual
+          }
+        },
+        error: (error) => {
+          console.error('Erro ao carregar história', error);
+        }
+      });
     }
   }
 
-  onFileSelected(event: any): void {
-    const file: File = event.target.files[0];
+  // metodo chamado quando o user faca um upload de uma nova imagem
+  onImageSelected(event: any) {
+    const file = event.target.files[0];
     if (file) {
       this.novaImagem = file;
       const reader = new FileReader();
-      reader.onload = (e: any) => (this.historia.imagem = e.target.result);
+      reader.onload = () => {
+        this.imagemUrl = reader.result as string; // atualizar a visualizacao da imagem
+      };
       reader.readAsDataURL(file);
     }
   }
 
-  salvarHistoria(): void {
-    if (this.historia.id && this.novaImagem) {
-      const formData = new FormData();
-      formData.append('imagem', this.novaImagem);
-      this.service.uploadImagem(this.historia.id, formData).subscribe({
-        next: () => this.atualizarDados(),
-        error: (err) => console.error('Erro ao atualizar imagem:', err)
-      });
-    } else {
-      this.atualizarDados();
-    }
-  }
+  salvar(): void {
+    // salva a historia sem a imagem primeiro
+    this.historiaService.atualizar(this.historia.id, this.historia).subscribe(
+      (data) => {
 
-  atualizarDados(): void {
-    this.service.atualizar(this.historia).subscribe({
-      next: () => {
-        console.log('História atualizada com sucesso');
-        this.router.navigate(['/']);
+        if (this.novaImagem) {
+          const formData = new FormData();
+          formData.append('imagem', this.novaImagem);
+
+          // faz o upload da nova imagem
+          this.historiaService.uploadImagem(this.historia.id, formData).subscribe(
+            () => {
+              this.router.navigate(['/']);
+            },
+            (error) => {
+              console.error('Erro ao atualizar imagem', error);
+            }
+          );
+        } else {
+          this.router.navigate(['/']);
+        }
       },
-      error: (err) => console.error('Erro ao atualizar a história:', err)
-    });
+      (error) => {
+        console.error('Erro ao atualizar história', error);
+      }
+    );
   }
 }

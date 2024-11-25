@@ -1,62 +1,38 @@
 <section class="add_container">
-    <div class="add-box">
-      <h1>Adicionar história</h1>
-      <mat-card class="card mat-elevation-z3">
-        <form class="form-layout">
-          <!-- Row 1: Imagem and Título -->
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Imagem</mat-label>
-              <input type="file" class="file-input" (change)="onFileSelected($event)" />
-            </mat-form-field>
-  
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Título</mat-label>
-              <input matInput placeholder="Digite o título" />
-            </mat-form-field>
-          </div>
-  
-          <!-- Row 2: Autor and Publicação -->
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Autor</mat-label>
-              <input matInput placeholder="Digite o autor" />
-            </mat-form-field>
-  
-            <mat-form-field appearance="fill" class="form-field">
-              <mat-label>Publicação</mat-label>
-              <input matInput placeholder="Digite a publicação" />
-            </mat-form-field>
-          </div>
-  
-          <!-- Row 3: Introdução da história -->
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field full-width">
-              <mat-label>Introdução da história</mat-label>
-              <textarea matInput rows="3" placeholder="Digite a introdução"></textarea>
-            </mat-form-field>
-          </div>
-  
-          <!-- Row 4: Meio da história -->
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field full-width">
-              <mat-label>Meio da história</mat-label>
-              <textarea matInput rows="3" placeholder="Digite o meio"></textarea>
-            </mat-form-field>
-          </div>
-  
-          <!-- Row 5: Final da história -->
-          <div class="form-row">
-            <mat-form-field appearance="fill" class="form-field full-width">
-              <mat-label>Final da história</mat-label>
-              <textarea matInput rows="3" placeholder="Digite o final"></textarea>
-            </mat-form-field>
-          </div>
-  
-          <!-- Submit Button -->
-          <button mat-raised-button color="primary" class="button_add">Adicionar</button>
-        </form>
-      </mat-card>
-    </div>
-  </section>
-  
+  <div class="add-box">
+    <h1>Adicionar história</h1>
+    <mat-card class="card mat-elevation-z3">
+      <form class="form-layout">
+
+        <div class="form-row">
+          <input class="border-left" type="file" id="imagem" (change)="onFileSelected($event)" />
+          <input class="border-right" matInput [(ngModel)]="historiaData.titulo" name="titulo"
+            placeholder="Digite o título" required />
+        </div>
+
+        <div class="form-row">
+          <input matInput [(ngModel)]="historiaData.autor" name="autor" placeholder="Digite o autor" required />
+          <input matInput [(ngModel)]="historiaData.publicacao" name="publicacao" placeholder="Digite a publicação"
+            required />
+        </div>
+
+        <div class="form-row">
+          <textarea matInput [(ngModel)]="historiaData.historia_intro" name="historia_intro" rows="3"
+            placeholder="Digite a introdução" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <textarea class="historia_meio" matInput [(ngModel)]="historiaData.historia_meio" name="historia_meio"
+            rows="5" placeholder="Digite o meio" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <textarea class="border" matInput [(ngModel)]="historiaData.historia_fim" name="historia_fim" rows="3"
+            placeholder="Digite o final" required></textarea>
+        </div>
+
+        <button type="submit" (click)="onSubmit()" class="button_add">Adicionar História</button>
+      </form>
+    </mat-card>
+  </div>
+</section>

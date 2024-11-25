@@ -6,11 +6,24 @@ npx ng g c components/header
 
 
 {
-        "titulo": "Cahinhos Dourados",
-        "imagem": "",
-        "historia_intro": "Era uma vez uma menina chamada Cachinhos Dourados, conhecida por seus cabelos dourados e cacheados que brilhavam como ouro. Um dia, enquanto explorava a floresta,",
-        "historia_meio": " Depois, na cozinha, viu três tigelas de mingau sobre a mesa. Provou a tigela maior, ",
-        "historia_fim": "Quando Cachinhos Dourados acordou e viu os ursos, ficou assustada. Porém, eles foram gentis,.",
-        "autor": "Robert Southey ",
-        "publicacao": "publicado em 1837"
-    }
+    "titulo": "Cachinhos Dourados",
+    "imagem": "",
+    "historia_intro": "Era uma vez uma menina chamada Cachinhos Dourados, conhecida por seus cabelos dourados e cacheados que brilhavam como ouro. Um dia, enquanto explorava a floresta, ela encontrou uma casinha encantadora entre as árvores. Curiosa, bateu na porta, mas como ninguém respondeu e a porta estava entreaberta, decidiu entrar para espiar. Na sala, encontrou três cadeiras e resolveu experimentar cada uma. A cadeira grande era dura demais, a média mole demais, mas a cadeira pequena era perfeita para ela.",
+    "historia_meio": "Depois, na cozinha, viu três tigelas de mingau sobre a mesa. Provou a tigela maior, que estava muito quente; a média estava muito fria; mas a menor estava perfeita, e ela acabou com o mingau. Sentindo-se cansada, Cachinhos Dourados subiu ao andar de cima, onde encontrou três camas. A maior era dura demais, a média mole demais, e a menor, aconchegante. Logo, ela adormeceu. Enquanto ela dormia, os verdadeiros donos da casa — três ursos: Papai Urso, Mamãe Ursa e o Ursinho — voltaram de sua caminhada. Notaram que algo estava fora do lugar: Papai Urso viu que sua cadeira havia sido usada, Mamãe Ursa encontrou o mingau mexido, e Ursinho descobriu sua tigela vazia e sua cadeira quebrada. Intrigados, subiram ao quarto e ficaram surpresos ao ver uma menina dormindo na cama do Ursinho.",
+    "historia_fim": "Quando Cachinhos Dourados acordou e viu os ursos, ficou assustada. Porém, eles foram gentis, e ela logo explicou o que havia acontecido, pedindo desculpas por entrar sem permissão. Os ursos a perdoaram, e ela prometeu ser mais cuidadosa e respeitar as casas dos outros. E assim, Cachinhos Dourados partiu com uma lição importante, enquanto os três ursos voltaram à sua tranquila rotina na floresta.",
+    "autor": "Robert Southey ",
+    "publicacao": "publicado em 1837"
+}
+
+Era uma vez uma menina chamada Cachinhos Dourados, conhecida por seus cabelos dourados e cacheados que brilhavam como ouro. Um dia, enquanto explorava a floresta, ela encontrou uma casinha encantadora entre as árvores. Curiosa, bateu na porta, mas como ninguém respondeu e a porta estava entreaberta, decidiu entrar para espiar. Na sala, encontrou três cadeiras e resolveu experimentar cada uma. A cadeira grande era dura demais, a média mole demais, mas a cadeira pequena era perfeita para ela.
+
+Depois, na cozinha, viu três tigelas de mingau sobre a mesa. Provou a tigela maior, que estava muito quente; a média estava muito fria; mas a menor estava perfeita, e ela acabou com o mingau. Sentindo-se cansada, Cachinhos Dourados subiu ao andar de cima, onde encontrou três camas. A maior era dura demais, a média mole demais, e a menor, aconchegante. Logo, ela adormeceu.
+Enquanto ela dormia, os verdadeiros donos da casa — três ursos: Papai Urso, Mamãe Ursa e o Ursinho — voltaram de sua caminhada. Notaram que algo estava fora do lugar: Papai Urso viu que sua cadeira havia sido usada, Mamãe Ursa encontrou o mingau mexido, e Ursinho descobriu sua tigela vazia e sua cadeira quebrada. Intrigados, subiram ao quarto e ficaram surpresos ao ver uma menina dormindo na cama do Ursinho.
+
+Quando Cachinhos Dourados acordou e viu os ursos, ficou assustada. Porém, eles foram gentis, e ela logo explicou o que havia acontecido, pedindo desculpas por entrar sem permissão. Os ursos a perdoaram, e ela prometeu ser mais cuidadosa e respeitar as casas dos outros. E assim, Cachinhos Dourados partiu com uma lição importante, enquanto os três ursos voltaram à sua tranquila rotina na floresta.
+
+Robert Southey 
+publicado em 1837
+
+https://dontpad.com/saga
+https://we.tl/t-VJjp3vTCXw

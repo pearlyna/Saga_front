@@ -1,33 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCardContent } from '@angular/material/card';
+import { MatCard, MatCardHeader, MatCardContent } from '@angular/material/card';
 import { historia } from '../../entities/historia';
 import { HistoriaService } from '../../services/historia.service';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ler-historia',
   standalone: true,
-  imports: [CommonModule, MatCard, MatCardSubtitle, MatCardTitle, MatCardHeader, MatCardContent],
+  imports: [CommonModule, MatCard, MatCardHeader, MatCardContent],
   templateUrl: './ler-historia.component.html',
   styleUrls: ['./ler-historia.component.scss']
 })
 export class LerHistoriaComponent implements OnInit {
-  historiaLer: historia | null = null; // Armazenar a história selecionada
+  historiaLer: historia | null = null; // armazenar a história carregada
+  loading: boolean = true;
+  error: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private historiaService: HistoriaService) { }
 
   ngOnInit(): void {
-    // Recuperar o estado da navegação
-    const historiaState = history.state.historia;
+    const historiaId = history.state.historiaId; // recuperar o ID do estado
 
-    if (historiaState) {
-      this.historiaLer = historiaState;
-      console.log('História recebida:', this.historiaLer); // Debugging
+    if (historiaId) {
+      this.carregarHistoria(historiaId);
     } else {
-      console.error('Nenhuma história foi encontrada no estado.');
-      // Redirecionar ou exibir uma mensagem de erro se nenhum estado for encontrado
+      console.error('Nenhum ID foi encontrado no estado.');
+      this.error = true;
+      this.loading = false;
     }
+  }
+
+  carregarHistoria(id: number): void {
+    this.historiaService.findById(id).subscribe({
+      next: (historia) => {
+        const baseUrl = 'http://localhost:8081/historia/imagem/'; // URL para imagens
+        this.historiaLer = {
+          ...historia,
+          imagem: historia.imagem ? `${baseUrl}${historia.imagem}` : undefined,
+        };
+        console.log('História carregada com imagem atualizada:', this.historiaLer);
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar a história:', err);
+        this.error = true;
+        this.loading = false;
+        this.historiaService.message('Erro ao carregar a história.');
+      }
+    });
   }
 }

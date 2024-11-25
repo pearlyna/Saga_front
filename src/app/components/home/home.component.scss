@@ -27,7 +27,7 @@
             font-family: "Kaushan Script", cursive;
             font-size: 80px;
             mix-blend-mode: hard-light;
-            text-shadow: 0 7px 6px rgb(0, 0, 0); 
+            text-shadow: 0 7px 6px rgb(0, 0, 0);
         }
     }
 
@@ -45,7 +45,7 @@
             font-weight: lighter;
             font-style: normal;
             line-height: 1.3;
-            text-shadow: 0 7px 6px rgb(0, 0, 0); 
+            text-shadow: 0 7px 6px rgb(0, 0, 0);
         }
     }
 }
@@ -56,10 +56,10 @@
 
 .links {
     display: flex;
-    flex-direction: column; /* Stack text and icons vertically */
-    align-items: left; /* Center align the content horizontally */
-    text-align: left; /* Ensure text is centered */
-    margin-left: 200px; /* Center the section horizontally on the page */
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    margin-left: 200px;
     width: fit-content;
 
     p {
@@ -69,35 +69,42 @@
         font-weight: lighter;
         font-style: normal;
         line-height: 1.3;
-        margin-bottom: 20px; /* Add spacing between text and icons */
+        margin-bottom: 20px;
     }
 }
 
 .icons {
     display: flex;
-    justify-content: right; 
-    gap: 20px; 
+    justify-content: right;
+    gap: 20px;
     margin-top: -20px;
     margin-right: 150px;
 
     .insta,
     .twit,
     .face {
-        background-color: #253E0B; /* Shared background for icons */
-        display: flex; /* Center icon images */
+        background-color: #253E0B;
+        display: flex;
         justify-content: right;
         align-items: right;
-        border-radius: 50%; /* Make them circular */
+        border-radius: 50%;
         width: 35px;
         height: 35px;
         box-shadow: 0 7px 6px rgba(0, 0, 0, 0.482);
+    }
+
+
+    .insta:hover,
+    .twit:hover,
+    .face:hover {
+        background-color: #3c6213;
     }
 
     img {
         width: 35px;
         height: 35px;
         padding: 5px;
-        border-radius: 50%; /* Ensure the image stays circular */
+        border-radius: 50%;
     }
 }
 
@@ -167,7 +174,6 @@
 
             h1 {
                 font-size: 60px;
-                /* Reduce font size */
             }
         }
 
@@ -177,14 +183,14 @@
 
             p {
                 font-size: 30px;
-                /* Reduce paragraph font size */
             }
         }
     }
+
     .links {
         display: flex;
         flex-direction: column;
-        gap:  30px;
+        gap: 30px;
         align-items: center;
         margin: 0;
         width: fit-content;
@@ -218,7 +224,6 @@
 
             h1 {
                 font-size: 50px;
-                /* Further reduce font size */
             }
         }
 
@@ -228,7 +233,6 @@
 
             p {
                 font-size: 25px;
-                /* Further reduce paragraph font size */
             }
         }
     }
@@ -261,7 +265,6 @@
 
             h1 {
                 font-size: 40px;
-                /* Smaller font for small screens */
             }
         }
 
@@ -271,7 +274,6 @@
 
             p {
                 font-size: 20px;
-                /* Smaller font for paragraph */
             }
         }
     }
