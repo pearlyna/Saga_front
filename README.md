@@ -1,27 +1,101 @@
-# Saga
+# 📖 SAGA - Sistema de Gerenciamento de Histórias
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+**SAGA** é um sistema Fullstack criado como parte de um projeto universitário com o objetivo de desenvolver um CRUD completo usando **Angular** no front-end e **Spring Boot** no back-end.
 
-## Development server
+Nosso grupo optou por desenvolver algo criativo e divertido: uma plataforma onde os usuários podem adicionar suas próprias histórias ou qualquer outra criação narrativa, com capa(imagem), além de visualizar, editar e deletar as histórias salvas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🎯 Objetivo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O desafio do projeto era criar um sistema funcional de cadastro com operações de:
 
-## Build
+- Criar (add)
+- Visualizar (list)
+- Editar (update)
+- Deletar (delete)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Além disso, implementamos uma **validação de CPF**, e o **login** do usuário é feito utilizando **CPF e senha**.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🔧 Tecnologias Utilizadas
 
-## Running end-to-end tests
+### Front-end
+- Angular
+- HTML / SCSS
+- Angular Router
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Back-end
+- Spring Boot
+- Maven
+- Java 17+
+- H2 Database (em memória)
+- JPA / Hibernate
+- Validação de CPF
 
-## Further help
+### Testes
+- Postman (para testar as APIs)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## ✅ Funcionalidades
+
+- 🔐 Login com CPF e senha
+- 🧾 Cadastro de novas histórias com título, conteúdo e imagem de capa
+- 📚 Listagem de todas as histórias cadastradas
+- ✏️ Edição de histórias existentes
+- ❌ Exclusão de histórias
+- 🔍 Verificação de CPF válido no momento do cadastro
+- 🎨 Interface divertida e intuitiva
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+### ⚙️ Pré-requisitos
+
+- Node.js e npm instalados
+- Java 17+ e Maven instalados
+
+---
+
+### 🔜 Front-end - Angular
+
+1. Abra um terminal:
+
+```bash
+cd Saga_front
+```
+
+2. Instale as dependências e inicie o projeto:
+
+```bash
+npm install
+npm start
+```
+
+> O front-end rodará em `http://localhost:4200`
+
+---
+
+## 👤 Acesso ao Sistema
+
+Para acessar o sistema, o usuário deve estar previamente cadastrado com CPF válido. Caso deseje, cadastre um novo usuário para teste.
+
+---
+
+## 💡 Sobre o Projeto
+
+O **SAGA** foi idealizado para ser uma ferramenta leve, divertida e criativa. Ao invés de um CRUD tradicional de cadastro de clientes ou produtos, optamos por algo diferente: uma "biblioteca digital" onde o usuário pode gerenciar suas próprias histórias, como se fossem livros personalizados com título, conteúdo e capa.
+
+A ideia é unir aprendizado técnico com criatividade e usabilidade.
+
+---
+
+## 👩‍💻 Desenvolvido por
+
+Pearl Nyarko e equipe  
+Projeto Universitário - Projeto Integrador com Angular + Spring Boot + H2
+
+---
